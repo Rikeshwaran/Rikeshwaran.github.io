@@ -1,12 +1,170 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Rikeshwaran M - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #e3e6eb);
+            transition: background 1.0s ease-in-out;
+            overflow-x: hidden;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #e3e6eb);
+            transition: background 1.0s ease-in-out;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #007bff, #6610f2);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 11, 241, 0.3);
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .btn-primary {
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            animation: pulse 0.6s ease-in-out;
+        } 
+    </style>
 </head>
 <body>
-    <h1>Hi I'm RIKESHWARAN M</h1>
+    <header>
+        <h1>RIKESHWARAN M</h1>
+        <p>🚀 Computer Science and Engineering</p>
+    </header>
     
+    <section class="container">
+        <h2>About Me</h2>
+        <p>An individual with a keen interest in programming, designing, and data analytics. My goal is to contribute to data-driven decision-making processes in a dynamic organization while continuously learning. I am committed to staying at the forefront of technology trends and applying best practices to drive business success with meaningful impact.</p>
+    </section>
+    
+    <section class="container">
+        <h2>Career Objectives</h2>
+        <p>To contribute to data-driven decision-making processes in a dynamic organization while continuously learning and adapting to new technologies. I aim to utilize my analytical, programming, and problem-solving skills to enhance business operations and innovation.</p>
+    </section>
+    
+    <section class="container">
+        <h2>Education</h2>
+        <p>I completed my secondary education at Kongu Vellalar Matric Higher Secondary School, Chennimalai, in 2019, achieving a percentage of 86.7%. Subsequently, I pursued my higher secondary education at the same institution and graduated in 2021 with a percentage of 84.4%.</p>
+    </section>
+
+    <section class="container">
+        <h2>Areas of Interest</h2>
+        <p>My primary areas of interest include designing, data analytics, full-stack development, and software development. I am passionate about creating innovative solutions and leveraging technology to solve real-world problems.</p>
+    </section>
+    
+    <section class="container">
+        <h2>Skills</h2>
+        <p>I have proficiency in multiple programming languages and technologies, including C language, Java, HTML, CSS, JavaScript, and Bootstrap. My technical expertise allows me to develop robust and user-friendly applications.</p>
+    </section>
+    
+    <section class="container">
+        <h2>Certifications</h2>
+        <p>I have completed introductory courses in Artificial Intelligence, Deep Learning, and Natural Language Processing conducted by Infosys Springboard. Additionally, I have undergone Java and HTML training along with Arduino training from the Spoken Tutorial Project, IIT Bombay. I have also attended an image editing workshop conducted by Dreamzone.</p>
+    </section>
+    
+    <section class="container">
+        <h2>Achievements</h2>
+        <p>I have actively participated in several workshops and competitions, including an Artificial Intelligence workshop conducted by Top Engineers and a paper presentation at Kamaraj College of Engineering on "Automated Field Water Drain System." I was also part of the Internal Hackathon team "Blooming Innovators" at Velalar College of Engineering and Technology and attended a cyber security workshop organized by The Tech Unique.</p>
+    </section>
+    
+    <section class="container">
+        <h2>Projects</h2>
+        <p>My projects include the development of a Smart House automation model that integrates sensors for automated household tasks. Additionally, I designed an Automated Field Water Drain System, which helps drain excess water from large agricultural fields.</p>
+    </section>
+    
+    <section class="container">
+        <h2>Volunteer & Extracurricular Activities</h2>
+        <p>I have volunteered in the Metro KIDATHON event powered by JCI Erode Metro. Additionally, <br>I was an active participant in the National Cadet Corps (NCC) at Velalar College of Engineering and Technology. I also took part in the Group Level Selection Camp for IGC Shooting, conducted by the 15 TN Battalion NCC, Erode.</p>
+    </section>
+    <section class="container">
+        <h2>Contact</h2>
+        <p>📍 Chennimalai, Perundurai, Erode, India - 638051</p>
+        <p>📞 +91 9629040311 | 📧 rikeshrikey@gmail.com</p>
+        <p>🔗 <a href="https://linkedin.com/in/rikeshwaran-m" target="_blank">LinkedIn</a></p>
+    </section>
+    
+    
+    <section class="container">
+        <h2>Contact Me</h2>
+        <form class="contact-form" action="https://formsubmit.co/rikeshrikey@gmail.com" method="POST" id="contactForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+        <p id="formMessage" class="mt-3 text-success" style="display: none;">Thank you! Your message has been sent.</p>
+    </section>
+
+    <footer>
+        <p>📞 +91 9629040311 | 📧 rikeshrikey@gmail.com</p>
+        <p>🔗 <a href="https://linkedin.com/in/rikeshwaran-m" target="_blank">LinkedIn</a></p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $(".container").on("mouseenter", function() {
+                $(this).css("box-shadow", "0 8px 20px rgba(0, 0, 0, 0.4)");
+            });
+            $(".container").on("mouseleave", function() {
+                $(this).css("box-shadow", "0 5px 15px rgba(0, 0, 0, 0.2)");
+            });
+
+            $("#contactForm").on("submit", function(event) {
+                event.preventDefault();
+                $("#formMessage").fadeIn(500).delay(3000).fadeOut(500);
+                this.reset();
+            });
+        });
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+    alert("Your message has been sent successfully!");
+});
+
+    </script>
 </body>
 </html>
