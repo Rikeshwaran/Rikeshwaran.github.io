@@ -28,3 +28,24 @@ $(window).on('scroll', function () {
     }
   };
   
+  const video = document.getElementById('bgVideo');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+    const scrollFraction = scrollTop / maxScroll;
+    const videoDuration = video.duration;
+
+    if (!isNaN(videoDuration)) {
+      video.currentTime = scrollFraction * videoDuration;
+    }
+  });
+
+  // Optional: Preload video metadata to get duration immediately
+  video.addEventListener('loadedmetadata', () => {
+    video.currentTime = 0;
+  });
+
+
+  
