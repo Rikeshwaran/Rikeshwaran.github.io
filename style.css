@@ -42,6 +42,18 @@ body {
     font-size: 1.5em;
     margin-top: 15px;
   }
+  #hiremebtn{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 20px;
+    transition: all 0.5s;
+  }
+  #hiremebtn:hover{
+    color: #000;
+    background-color: #fff;
+    animation: pulse 1s ease-in-out;
+  }
 
   /* Right Photo Styling */
   .profile-pic {

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container h2 {
+    color: #007BFF;
+}
+
+.container input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container button {
+    width: 30%;
+    padding: 10px;
+    background: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container button:hover {
+    background: #0056b3;
+}
+#mainbutton{
+    display: flex;      
+    justify-content: space-between;
+}
+#mainbutton a{
+    text-decoration: none;
+    width: 30%;
+    padding: 10px;
+    background: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Enter the Details</h2>
+        <form id="contact-form" action="https://formsubmit.co/rikeshrikey@gmail.com" method="POST">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <div id="mainbutton">
+                <button type="submit">Send Message</button>
+                <a href="index.html">back to home</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+    alert("Your message has been sent successfully!");
+});
+
+    </script>
+</body>
+</html>
