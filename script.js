@@ -1,51 +1,48 @@
 $(window).on('scroll', function () {
-    $('section').each(function () {
-      if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
-        $(this).addClass('visible');
-      }
-    });
-  });
-  
-  $("#contactForm").on("submit", function (event) {
-    event.preventDefault();
-    $("#formMessage").fadeIn(500).delay(3000).fadeOut(500);
-    this.reset();
-  });
-  
-  function showCertificate(imageSrc) {
-    document.getElementById('certificateImage').src = imageSrc;
-    document.getElementById('certificateModal').style.display = "block";
-  }
-  
-  function closeModal() {
-    document.getElementById('certificateModal').style.display = "none";
-  }
-  
-  window.onclick = function (event) {
-    let modal = document.getElementById('certificateModal');
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-  
-  const video = document.getElementById('bgVideo');
-
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
-
-    const scrollFraction = scrollTop / maxScroll;
-    const videoDuration = video.duration;
-
-    if (!isNaN(videoDuration)) {
-      video.currentTime = scrollFraction * videoDuration;
+  $('section').each(function () {
+    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+      $(this).addClass('visible');
     }
   });
+});
 
-  // Optional: Preload video metadata to get duration immediately
-  video.addEventListener('loadedmetadata', () => {
-    video.currentTime = 0;
+document.getElementById("contactform").addEventListener("submit", function(event) {
+  alert("Your message has been sent successfully!");
+});
+
+function showCertificate(imageSrc) {
+  document.getElementById('certificateImage').src = imageSrc;
+  document.getElementById('certificateModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('certificateModal').style.display = "none";
+}
+
+window.onclick = function (event) {
+  let modal = document.getElementById('certificateModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+// Show button when user scrolls down 50px
+window.addEventListener('scroll', () => {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+// Scroll to top smoothly when button clicked
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
+});
 
 
-  
+
