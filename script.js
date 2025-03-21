@@ -44,5 +44,3 @@ scrollBtn.addEventListener('click', () => {
   });
 });
 
-
-
