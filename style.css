@@ -224,7 +224,7 @@ body {
 }
 
   .education-card {
-    background: linear-gradient(135deg, #ece9f3, #ffffff);
+    background: linear-gradient(90deg,#fdfdfd, #e3dfff, #cbc4ff);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -234,6 +234,7 @@ body {
 
   .education-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(42, 11, 241, 0.3);
   }
 
   .cert-grid {
