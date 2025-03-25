@@ -25,22 +25,3 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-const scrollBtn = document.getElementById("scrollTopBtn");
-
-// Show button when user scrolls down 50px
-window.addEventListener('scroll', () => {
-  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-});
-
-// Scroll to top smoothly when button clicked
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-
