@@ -13,8 +13,12 @@ document.getElementById("contactform").addEventListener("submit", function(event
 function showCertificate(imageSrc, text, link) {
   document.getElementById('certificateImage').src = imageSrc;
   document.getElementById('certificateText').innerText = text;
-  document.getElementById('certificateLink').innerText = "🔗 View Certificate";
-  document.getElementById('certificateLink').href = link;
+  if (link) {
+    document.getElementById('certificateLink').href = link;
+    document.getElementById('certificateLink').style.display = "block";
+  } else {
+    document.getElementById('certificateLink').style.display = "none";
+  }
   document.getElementById('certificateModal').style.display = "block";
 }
 
