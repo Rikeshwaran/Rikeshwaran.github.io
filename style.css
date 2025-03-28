@@ -43,9 +43,10 @@ body {
     margin-top: 15px;
   }
   #hiremebtn{
+    margin: 5px 20px;
     color: #fff;
     text-decoration: none;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 20px;
     transition: all 0.5s;
   }
