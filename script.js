@@ -1,10 +1,23 @@
-$(window).on('scroll', function () {
-  $('section').each(function () {
-    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
-      $(this).addClass('visible');
-    }
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+
+  function revealSections() {
+    console.log("Scrolling..."); // Check if function runs
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const triggerPoint = window.innerHeight * 0.8;
+
+      if (sectionTop < triggerPoint) {
+        section.classList.add("show");
+        console.log("Revealed:", section.id);
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealSections);
+  revealSections();
 });
+
 
 document.getElementById("contactform").addEventListener("submit", function(event) {
   alert("Your message has been sent successfully!");
