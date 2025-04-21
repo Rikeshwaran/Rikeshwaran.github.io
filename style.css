@@ -20,7 +20,6 @@ body {
 header {
   background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   color: white;
-  padding: 80px 15%;
   position: relative;
   overflow: hidden;
   min-height: 500px;
@@ -28,21 +27,31 @@ header {
   align-items: center;
 }
 
+.header-container {
+  width: 100%;
+  padding: 80px 15%;
+}
+
 .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header-text {
   max-width: 600px;
-  padding: 0 30px;
+  padding-right: 50px;
+  animation: fadeInDown 1s ease forwards;
 }
 
 .header-text h1 {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  animation: fadeInDown 1s ease forwards;
 }
 
 .header-text p {
@@ -66,6 +75,92 @@ header {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   animation: fadeIn 1.5s ease forwards;
   opacity: 0;
+  flex-shrink: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .header-container {
+    padding: 80px 10%;
+  }
+  
+  .header-text h1 {
+    font-size: 3rem;
+  }
+  
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .header-text {
+    padding-right: 0;
+    margin-top: 40px;
+    order: 2;
+  }
+  
+  .profile-pic {
+    order: 1;
+    margin-bottom: 30px;
+  }
+  
+  .header-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-container {
+    padding: 60px 5%;
+  }
+  
+  .header-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .header-text p {
+    font-size: 1.2rem;
+  }
+  
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .header-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .header-buttons .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Navigation */
