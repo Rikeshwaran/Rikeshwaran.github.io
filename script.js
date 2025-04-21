@@ -1,48 +1,98 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
+  // Scroll reveal animation
   const sections = document.querySelectorAll("section");
-
-  function revealSections() {
-    console.log("Scrolling..."); // Check if function runs
-    sections.forEach((section) => {
+  
+  function checkScroll() {
+    sections.forEach(section => {
       const sectionTop = section.getBoundingClientRect().top;
-      const triggerPoint = window.innerHeight * 0.8;
-
-      if (sectionTop < triggerPoint) {
-        section.classList.add("show");
-        console.log("Revealed:", section.id);
+      const windowHeight = window.innerHeight;
+      
+      if (sectionTop < windowHeight * 0.75) {
+        section.style.opacity = "1";
+        section.style.transform = "translateY(0)";
       }
     });
   }
-
-  window.addEventListener("scroll", revealSections);
-  revealSections();
+  
+  // Initialize sections as hidden
+  sections.forEach(section => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(50px)";
+    section.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+  });
+  
+  // Check on load
+  checkScroll();
+  
+  // Check on scroll
+  window.addEventListener("scroll", checkScroll);
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        // Close mobile menu if open
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          const toggler = document.querySelector('.navbar-toggler');
+          toggler.click();
+        }
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Navbar background change on scroll
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)";
+    } else {
+      navbar.style.boxShadow = "none";
+    }
+  });
 });
 
-
-document.getElementById("contactform").addEventListener("submit", function(event) {
-  alert("Your message has been sent successfully!");
-});
-
+// Certificate Modal Functions
 function showCertificate(imageSrc, text, link) {
-  document.getElementById('certificateImage').src = imageSrc;
-  document.getElementById('certificateText').innerText = text;
+  const modal = document.getElementById('certificateModal');
+  const img = document.getElementById('certificateImage');
+  const textEl = document.getElementById('certificateText');
+  const linkEl = document.getElementById('certificateLink');
+  
+  img.src = imageSrc;
+  textEl.textContent = text;
+  
   if (link) {
-    document.getElementById('certificateLink').href = link;
-    document.getElementById('certificateLink').style.display = "block";
+    linkEl.href = link;
+    linkEl.style.display = "inline-block";
   } else {
-    document.getElementById('certificateLink').style.display = "none";
+    linkEl.style.display = "none";
   }
-  document.getElementById('certificateModal').style.display = "block";
+  
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
   document.getElementById('certificateModal').style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
-
-window.onclick = function (event) {
-  let modal = document.getElementById('certificateModal');
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('certificateModal');
   if (event.target == modal) {
-    modal.style.display = "none";
+    closeModal();
   }
-};
+};  
