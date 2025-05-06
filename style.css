@@ -764,7 +764,7 @@ footer i {
   }
 }
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
   background-color: black;
 }
 
