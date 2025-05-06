@@ -110,7 +110,8 @@ class ParticleSystem {
       (alpha) => `rgba(0, 0, 255, ${alpha})`,   
       (alpha) => `rgba(255, 0, 0, ${alpha})`,   
       (alpha) => `rgba(0, 255, 0, ${alpha})`,
-      (alpha) => `rgb(255, 165, 0, ${alpha})`  
+      (alpha) => `rgb(255, 165, 0, ${alpha})`,
+      (alpha) => `rgba(255, 255, 255, ${alpha})`, 
     ];
 
     // Setup
