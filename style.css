@@ -763,3 +763,34 @@ footer i {
     transform: translateY(0) scale(1);
   }
 }
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: black;
+}
+
+::-webkit-scrollbar-button:single-button:increment {
+  height: 15px;
+  background: black;
+  display: block;
+  border-style: solid;
+  border-width: 7px 6px 0 6px;
+  border-color: red transparent transparent transparent;
+}
+
+::-webkit-scrollbar-button:single-button:decrement {
+  height: 15px;
+  background: black;
+  display: block;
+  border-style: solid;
+  border-width: 0 6px 7px 6px;
+  border-color: transparent transparent red transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}
