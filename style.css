@@ -8,7 +8,13 @@
 html {
   scroll-behavior: smooth;
 }
+html, body, a, input, textarea, button, .home-btn {
+  cursor: none !important;
+}
 
+input:hover, textarea:hover, button:hover, .home-btn:hover {
+  cursor: none !important;
+}
 body {
   font-family: 'Poppins', sans-serif;
   background: #f8f9fa8e;
