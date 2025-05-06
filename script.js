@@ -176,3 +176,13 @@ class ParticleSystem {
 document.querySelectorAll('.particles').forEach(container => {
   new ParticleSystem(container);
 });
+const cursorDot = document.getElementById("cursorDot");
+  const cursorRing = document.getElementById("cursorRing");
+
+  document.addEventListener("mousemove", (e) => {
+    const { clientX: x, clientY: y } = e;
+    cursorDot.style.top = y + "px";
+    cursorDot.style.left = x + "px";
+    cursorRing.style.top = y + "px";
+    cursorRing.style.left = x + "px";
+  });
